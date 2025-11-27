@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cuir et Fantaisies – Donjon privé BDSM dans les Laurentides</title>
-  <meta name="description" content="Cuir et Fantaisies – Donjon privé BDSM dans les Laurentides, Québec. Expériences BDSM immersives, domination, jeux de rôle et discipline, encadrées par une équipe expérimentée, dans un cadre sécurisé, discret et consensuel.">
+  <meta name="description" content="Cuir et Fantaisies – Donjon privé BDSM dans les Laurentides, Québec. Expériences BDSM immersives, domination, jeux de rôle et discipline, encadrées par une équipe expérimentée, dans un cadre discret, structuré et consensuel.">
   <style>
     :root {
       --bg: #050505;
       --bg-alt: #0b0b0b;
       --accent: #b91c1c;       /* rouge foncé */
-      --accent-soft: #f97373;  /* rouge plus clair */
+      --accent-soft: #ef5f6a;  /* rouge plus clair */
       --text: #f9fafb;
       --muted: #e5e7eb;
       --card: #111111;
@@ -31,7 +31,7 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top, #1f2933 0, #020202 45%, #000 100%);
+        radial-gradient(circle at top, #1f1f1f 0, #020202 45%, #000 100%);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -851,11 +851,11 @@
               <div class="hero-stat-grid">
                 <div class="hero-stat">
                   <div class="hero-stat-label">Tarif de base</div>
-                  <div class="hero-stat-value">350 $ / heure</div>
+                  <div class="hero-stat-value">300 $ / heure</div>
                 </div>
                 <div class="hero-stat">
                   <div class="hero-stat-label">Dépôt requis</div>
-                  <div class="hero-stat-value">50 $ à la réservation</div>
+                  <div class="hero-stat-value">50 $ obligatoire</div>
                 </div>
                 <div class="hero-stat">
                   <div class="hero-stat-label">Cadre</div>
@@ -863,7 +863,7 @@
                 </div>
               </div>
               <p class="hero-card-note">
-                Chaque séance est préparée à partir d’un formulaire et d’un échange préalable. Le dépôt confirme la réservation et le respect du temps réservé. L’adresse précise du donjon est transmise uniquement après validation de la demande.
+                Chaque séance est préparée à partir d’un formulaire et d’un échange préalable. Le dépôt de 50 $ confirme la réservation et le respect du temps réservé. L’adresse précise du donjon est transmise uniquement après validation de la demande.
               </p>
             </div>
           </aside>
@@ -980,7 +980,7 @@
             <article class="card">
               <h3 class="card-title">Scénarios BDSM immersifs</h3>
               <p class="card-text">
-                Séances construites autour d’un scénario : élève / maîtresse, service, protocole, domination, posture, règles à respecter. L’intensité est adaptée à l’expérience et aux limites de la personne reçue.
+                Séances construites autour d’un scénario : élève / maîtresse, service, protocole, domination, postures, règles à respecter. L’intensité est adaptée à l’expérience et aux limites de la personne reçue.
               </p>
               <div class="card-tags">
                 <span class="card-tag">Jeux de rôle</span>
@@ -1031,7 +1031,7 @@
                 <ul class="about-list">
                   <li>
                     <span class="dot"></span>
-                    <span><strong>Tarif horaire :</strong> 350 $ de l’heure.</span>
+                    <span><strong>Tarif horaire :</strong> 300 $ de l’heure.</span>
                   </li>
                   <li>
                     <span class="dot"></span>
@@ -1039,7 +1039,7 @@
                   </li>
                   <li>
                     <span class="dot"></span>
-                    <span><strong>Dépôt :</strong> un dépôt initial de 50 $ est exigé pour confirmer toute réservation.</span>
+                    <span><strong>Dépôt obligatoire :</strong> un dépôt de 50 $ est exigé pour confirmer toute réservation.</span>
                   </li>
                   <li>
                     <span class="dot"></span>
@@ -1075,8 +1075,8 @@
                   </li>
                 </ul>
                 <div class="about-badges">
+                  <span class="about-badge">300 $ / heure</span>
                   <span class="about-badge">Dépôt 50 $</span>
-                  <span class="about-badge">350 $ / heure</span>
                   <span class="about-badge">Formulaire préalable</span>
                 </div>
               </div>
