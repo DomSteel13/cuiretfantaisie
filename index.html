@@ -288,16 +288,56 @@
 
     .hero-card-header {
       display:flex;
-      justify-content:flex-start;
+      justify-content:space-between;
       align-items:center;
-      margin-bottom:0.4rem;
+      margin-bottom:1.2rem;
     }
 
     .hero-card-title {
-      font-size:1.1rem;
-      letter-spacing:0.06em;
+      font-size:0.9rem;
+      letter-spacing:0.08em;
       text-transform:uppercase;
       color:var(--muted);
+    }
+
+    .hero-card-pill {
+      font-size:0.75rem;
+      padding:0.25rem 0.7rem;
+      border-radius:999px;
+      background:rgba(0,0,0,0.9);
+      border:1px solid rgba(248,113,113,0.65);
+    }
+
+    .hero-stat-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:0.9rem;
+      margin-bottom:1rem;
+    }
+
+    .hero-stat {
+      background:rgba(0,0,0,0.88);
+      border-radius:var(--radius-lg);
+      padding:0.7rem 0.8rem;
+      border:1px solid rgba(39,39,42,0.95);
+      font-size:0.75rem;
+      color:var(--muted);
+    }
+
+    .hero-stat-label { opacity:0.75; margin-bottom:0.1rem; }
+    .hero-stat-value {
+      font-weight:600;
+      font-size:0.96rem;
+      color:#f9fafb;
+    }
+
+    .hero-card-note {
+      font-size:0.8rem;
+      color:var(--muted);
+      opacity:0.95;
+      border-top:1px dashed rgba(248,113,113,0.55);
+      padding-top:0.75rem;
+      margin-top:0.7rem;
     }
 
     /* Sections */
@@ -645,7 +685,6 @@
             <a href="#liens-emmanuelle">Liens Dame Emmanuelle</a>
             <a href="#services">Services</a>
             <a href="#tarifs">Tarifs & règles</a>
-            <a href="protocole.html">Règles du protocole</a>
             <a href="#contact">Contact</a>
             <a href="#contact" class="nav-cta"><span>Réserver une séance</span>↗</a>
           </div>
@@ -660,7 +699,6 @@
           <a href="#liens-emmanuelle">Liens Dame Emmanuelle</a>
           <a href="#services">Services</a>
           <a href="#tarifs">Tarifs & règles</a>
-          <a href="protocole.html">Règles du protocole</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -710,10 +748,27 @@
           <aside class="hero-card">
             <div class="hero-card-inner">
               <div class="hero-card-header">
-                <div class="hero-card-title">
-                  Entrer dans un monde où vos désirs prennent forme
+                <div class="hero-card-title">Aperçu du cadre</div>
+                <div class="hero-card-pill">Cuir et Fantaisies</div>
+              </div>
+              <div class="hero-stat-grid">
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Type de lieu</div>
+                  <div class="hero-stat-value">Donjon privé sur rendez-vous</div>
+                </div>
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Préparation des séances</div>
+                  <div class="hero-stat-value">Formulaire & échange préalable</div>
+                </div>
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Ambiance</div>
+                  <div class="hero-stat-value">Discrète, structurée, immersive</div>
                 </div>
               </div>
+              <p class="hero-card-note">
+                Chaque séance est construite à partir de vos limites, de votre expérience et de ce que vous souhaitez explorer.  
+                Les informations complètes sur la tarification, le dépôt et les règles de fonctionnement se trouvent plus bas dans la section <strong>Tarifs & règles</strong>.
+              </p>
             </div>
           </aside>
         </div>
@@ -851,6 +906,7 @@
               🔗 Instagram — @dame_emanuelle
             </a>
 
+            <!-- NOUVEAUX LIENS AJOUTÉS -->
             <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://dameemanuelle-code.github.io/Chambre-rose-flamboyant/">
               🔗 Site — Chambre rose flamboyant
             </a>
@@ -1136,7 +1192,6 @@
           <a href="#liens-emmanuelle">Liens Dame Emmanuelle</a>
           <a href="#services">Services</a>
           <a href="#tarifs">Tarifs</a>
-          <a href="protocole.html">Règles du protocole</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
