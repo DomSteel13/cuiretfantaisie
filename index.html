@@ -288,26 +288,896 @@
 
     .hero-card-header {
       display:flex;
-      justify-content:space-between;
+      justify-content:flex-start;
       align-items:center;
-      margin-bottom:1.2rem;
+      margin-bottom:0.4rem;
     }
 
     .hero-card-title {
-      font-size:0.9rem;
-      letter-spacing:0.08em;
+      font-size:1.1rem;
+      letter-spacing:0.06em;
       text-transform:uppercase;
       color:var(--muted);
     }
 
-    .hero-card-pill {
-      font-size:0.75rem;
-      padding:0.25rem 0.7rem;
-      border-radius:999px;
-      background:rgba(0,0,0,0.9);
-      border:1px solid rgba(248,113,113,0.65);
+    /* Sections */
+
+    section { padding:3rem 0; }
+
+    section:nth-of-type(odd) {
+      background:radial-gradient(circle at top,rgba(127,29,29,0.25),transparent 55%);
     }
 
-    .hero-stat-grid {
+    .section-header {
+      margin-bottom:1.8rem;
+      display:flex;
+      flex-direction:column;
+      gap:0.4rem;
+    }
+
+    .section-eyebrow {
+      font-size:0.8rem;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      color:var(--accent-soft);
+      opacity:0.9;
+    }
+
+    .section-title {
+      font-size:1.4rem;
+      font-weight:600;
+    }
+
+    .section-desc {
+      font-size:0.95rem;
+      color:var(--muted);
+      max-width:32rem;
+    }
+
+    /* Grids & cards */
+
+    .about-grid {
       display:grid;
-      grid-template-columns:repeat(
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      gap:2.2rem;
+    }
+
+    .about-card {
+      background:rgba(0,0,0,0.96);
+      border-radius:var(--radius-xl);
+      border:1px solid rgba(248,113,113,0.4);
+      padding:1.5rem 1.6rem;
+      box-shadow:var(--shadow-soft);
+      font-size:0.92rem;
+      color:var(--muted);
+    }
+
+    .about-list {
+      list-style:none;
+      margin-top:1.1rem;
+      display:grid;
+      gap:0.5rem;
+    }
+
+    .about-list li {
+      display:flex;
+      align-items:flex-start;
+      gap:0.5rem;
+      font-size:0.9rem;
+    }
+
+    .dot {
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      margin-top:0.4rem;
+      background:var(--accent-soft);
+    }
+
+    .about-badges {
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.5rem;
+      font-size:0.78rem;
+      margin-top:0.6rem;
+    }
+
+    .about-badge {
+      padding:0.3rem 0.7rem;
+      border-radius:999px;
+      background:rgba(0,0,0,0.9);
+      border:1px solid rgba(248,113,113,0.55);
+    }
+
+    .cards-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1.3rem;
+    }
+
+    .card {
+      background:var(--card);
+      border-radius:var(--radius-xl);
+      border:1px solid var(--border);
+      padding:1.2rem 1.3rem;
+      box-shadow:0 14px 28px rgba(0,0,0,0.7);
+      font-size:0.9rem;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before {
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:radial-gradient(circle at top left,rgba(248,113,113,0.22),transparent 60%);
+      opacity:0;
+      transition:opacity var(--transition-fast);
+      pointer-events:none;
+    }
+
+    .card:hover::before { opacity:1; }
+
+    .card-title {
+      font-size:1rem;
+      font-weight:600;
+      margin-bottom:0.4rem;
+    }
+
+    .card-text {
+      color:var(--muted);
+      font-size:0.88rem;
+      margin-bottom:0.7rem;
+    }
+
+    .card-tags {
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.35rem;
+      font-size:0.76rem;
+    }
+
+    .card-tag {
+      padding:0.2rem 0.6rem;
+      border-radius:999px;
+      background:rgba(0,0,0,0.96);
+      border:1px solid rgba(248,113,113,0.5);
+    }
+
+    .portfolio-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1.3rem;
+    }
+
+    .portfolio-item {
+      border-radius:var(--radius-xl);
+      background:rgba(0,0,0,0.96);
+      border:1px solid rgba(248,113,113,0.4);
+      padding:1rem 1.1rem;
+      font-size:0.88rem;
+      color:var(--muted);
+    }
+
+    .portfolio-title {
+      font-weight:600;
+      margin-bottom:0.25rem;
+      font-size:0.96rem;
+    }
+
+    .portfolio-meta {
+      font-size:0.78rem;
+      color:var(--muted);
+      opacity:0.85;
+      margin-bottom:0.45rem;
+    }
+
+    .portfolio-link {
+      font-size:0.8rem;
+      color:var(--accent-soft);
+    }
+
+    .testimonials-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:1.2rem;
+    }
+
+    .testimonial {
+      background:rgba(0,0,0,0.96);
+      border-radius:var(--radius-xl);
+      padding:1.3rem 1.4rem;
+      border:1px solid rgba(248,113,113,0.4);
+      font-size:0.88rem;
+      color:var(--muted);
+    }
+
+    .testimonial-quote {
+      margin-bottom:0.9rem;
+      font-style:italic;
+    }
+
+    .testimonial-author { font-weight:500; color:#f9fafb; }
+    .testimonial-role { font-size:0.8rem; opacity:0.85; }
+
+    .contact-grid {
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      gap:2rem;
+    }
+
+    .contact-card {
+      background:rgba(0,0,0,0.98);
+      border-radius:var(--radius-xl);
+      padding:1.5rem 1.6rem;
+      border:1px solid rgba(248,113,113,0.5);
+      box-shadow:var(--shadow-soft);
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+
+    .contact-form { display:grid; gap:0.85rem; margin-top:0.6rem; }
+
+    .field {
+      display:flex;
+      flex-direction:column;
+      gap:0.25rem;
+      font-size:0.85rem;
+    }
+
+    .field label {
+      color:#f9fafb;
+      font-weight:500;
+    }
+
+    .field input,
+    .field textarea {
+      border-radius:999px;
+      border:1px solid rgba(248,113,113,0.7);
+      background:rgba(0,0,0,0.95);
+      padding:0.6rem 0.8rem;
+      color:var(--text);
+      font-family:inherit;
+      font-size:0.9rem;
+      outline:none;
+      transition:border-color var(--transition-fast),box-shadow var(--transition-fast),background var(--transition-fast);
+    }
+
+    .field textarea {
+      border-radius:1rem;
+      min-height:110px;
+      resize:vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color:var(--accent-soft);
+      box-shadow:0 0 0 1px rgba(248,113,113,0.85);
+      background:#020202;
+    }
+
+    .contact-side {
+      font-size:0.9rem;
+      color:var(--muted);
+      display:grid;
+      gap:0.8rem;
+    }
+
+    .contact-line strong { color:#f9fafb; }
+
+    .contact-pill {
+      margin-top:0.4rem;
+      display:inline-flex;
+      align-items:center;
+      gap:0.4rem;
+      padding:0.35rem 0.75rem;
+      border-radius:999px;
+      background:rgba(0,0,0,0.9);
+      border:1px solid rgba(248,113,113,0.6);
+      font-size:0.78rem;
+    }
+
+    footer {
+      border-top:1px solid rgba(248,113,113,0.55);
+      padding:1.2rem 0 1.6rem;
+      font-size:0.8rem;
+      color:var(--muted);
+      margin-top:2rem;
+    }
+
+    .footer-row {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:0.8rem;
+      align-items:center;
+    }
+
+    .footer-links {
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.8rem;
+    }
+
+    .footer-links a { opacity:0.85; }
+    .footer-links a:hover { opacity:1; }
+
+    @media (max-width:960px) {
+      .hero-grid { grid-template-columns:minmax(0,1fr); }
+      .hero-card { order:-1; }
+      .cards-grid,
+      .portfolio-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .about-grid,
+      .contact-grid,
+      .testimonials-grid { grid-template-columns:minmax(0,1fr); }
+    }
+
+    @media (max-width:768px) {
+      .nav-links { display:none; }
+      .nav-burger { display:flex; }
+      .nav-mobile { display:flex; }
+      .hero { padding-top:3.3rem; }
+      h1 { font-size:clamp(2rem,4vw + 1.5rem,2.6rem); }
+      .cards-grid,
+      .portfolio-grid { grid-template-columns:minmax(0,1fr); }
+    }
+
+    @media (max-width:480px) {
+      .hero-actions { flex-direction:column; align-items:stretch; }
+      .btn-primary,.btn-ghost { justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <div class="logo">
+            <div class="logo-text-main">Cuir et Fantaisies</div>
+            <div class="logo-text-sub">Donjon privé BDSM – Laurentides</div>
+          </div>
+
+          <div class="nav-links" id="nav-links">
+            <a href="#donjon">Le donjon</a>
+            <a href="#a-propos">L’équipe</a>
+            <a href="#liens-emmanuelle">Liens Dame Emmanuelle</a>
+            <a href="#services">Services</a>
+            <a href="#tarifs">Tarifs & règles</a>
+            <a href="protocole.html">Règles du protocole</a>
+            <a href="#contact">Contact</a>
+            <a href="#contact" class="nav-cta"><span>Réserver une séance</span>↗</a>
+          </div>
+
+          <button class="nav-burger" id="nav-burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+        <div class="nav-mobile" id="nav-mobile" style="display:none;">
+          <a href="#donjon">Le donjon</a>
+          <a href="#a-propos">L’équipe</a>
+          <a href="#liens-emmanuelle">Liens Dame Emmanuelle</a>
+          <a href="#services">Services</a>
+          <a href="#tarifs">Tarifs & règles</a>
+          <a href="protocole.html">Règles du protocole</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="badge">
+              <div class="badge-dot"></div>
+              <span>Donjon privé – sur rendez-vous uniquement</span>
+            </div>
+            <h1>
+              <span class="highlight">Cuir et Fantaisies</span><br>
+              Donjon privé BDSM dans les Laurentides.
+            </h1>
+            <p class="hero-subtitle">
+              Un espace discret, structuré et encadré par une équipe expérimentée pour vivre des expériences BDSM immersives : domination, jeux de rôle, discipline, service et scénarios sur mesure, toujours dans le cadre du consentement et de la sécurité.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn-primary">
+                Faire une demande de réservation
+                <span>✉</span>
+              </a>
+              <a href="#tarifs" class="btn-ghost">
+                Voir les tarifs et conditions
+              </a>
+            </div>
+            <div class="hero-metas">
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Région</span>
+                <span class="hero-meta-value">Laurentides, Québec</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Format</span>
+                <span class="hero-meta-value">Donjon privé sur rendez-vous</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="hero-meta-label">Équipe</span>
+                <span class="hero-meta-value">Deux Dominantes et un switch</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-card-inner">
+              <div class="hero-card-header">
+                <div class="hero-card-title">
+                  Entrer dans un monde où vos désirs prennent forme
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- LE DONJON -->
+      <section id="donjon">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Le lieu</div>
+            <h2 class="section-title">Le donjon Cuir et Fantaisies</h2>
+            <p class="section-desc">
+              Un espace pensé pour l’immersion, la mise en scène et la discipline, dans un cadre intime, discret et rigoureusement encadré.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div>
+              <p class="about-card">
+                Le donjon Cuir et Fantaisies est un espace privé situé dans les Laurentides, au Québec.  
+                Il est conçu pour accueillir des séances BDSM encadrées : jeux de rôle, protocoles, postures, service, domination et mise en scène.
+                <br><br>
+                L’ambiance privilégie le sérieux, la structure et la qualité de l’expérience : chaque séance est préparée, les rôles sont définis, les limites sont discutées et les règles sont claires avant de commencer.
+                <br><br>
+                L’anonymat, la discrétion et le respect sont au cœur du fonctionnement : aucune information sensible n’est partagée, aucune diffusion de contenu n’est faite sans consentement explicite, et toute présence d’observateurs éventuels est discutée et approuvée à l’avance.
+              </p>
+            </div>
+            <div>
+              <ul class="about-list">
+                <li>
+                  <span class="dot"></span>
+                  <span>✅ <strong>Espace privé :</strong> accès uniquement sur rendez-vous, adresse transmise après validation de la demande et versement du dépôt.</span>
+                </li>
+                <li>
+                  <span class="dot"></span>
+                  <span>✅ <strong>Ambiance immersive :</strong> orientée BDSM, discipline, protocole, jeux de rôle et scénarios de domination / service.</span>
+                </li>
+                <li>
+                  <span class="dot"></span>
+                  <span>✅ <strong>Discrétion et anonymat :</strong> aucun invité imprévu, aucune diffusion de contenu, respect strict de la confidentialité.</span>
+                </li>
+              </ul>
+              <div class="about-badges">
+                <span class="about-badge">Donjon privé</span>
+                <span class="about-badge">Cadre structuré</span>
+                <span class="about-badge">Respect et consentement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- L’ÉQUIPE -->
+      <section id="a-propos">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">L’équipe</div>
+            <h2 class="section-title">Une dynamique à trois voix</h2>
+            <p class="section-desc">
+              Cuir et Fantaisies est porté par deux femmes dominantes et un homme pouvant être Dom ou soumis, selon le scénario et les besoins de la séance.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <article class="card">
+              <h3 class="card-title">Dame Emmanuelle</h3>
+              <p class="card-text">
+                Dominante expérimentée, structurée, posée et méthodique. Elle incarne une autorité calme et exigeante, axée sur la discipline, le protocole, la posture et le respect des engagements pris.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag">Discipline</span>
+                <span class="card-tag">Structure</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Lady Zaphir</h3>
+              <p class="card-text">
+                Femme trans, grande, rousse et switch, capable de jouer aussi bien le rôle de Domme que celui de présence plus nuancée, selon le scénario. Elle apporte une dimension théâtrale, expressive et adaptative.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag">Jeux de rôle</span>
+                <span class="card-tag">Intensité contrôlée</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Cuir et Fantaisies (hôte)</h3>
+              <p class="card-text">
+                Homme pouvant incarner, selon les besoins, un rôle de Dom, de guide ou de soumis dans certaines mises en scène. Il participe à la construction des scénarios, à l’accueil et à la gestion des dynamiques.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag">Accueil</span>
+                <span class="card-tag">Scénarisation</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIENS DAME EMANUELLE -->
+      <section id="liens-emmanuelle">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Présence en ligne</div>
+            <h2 class="section-title">Liens officiels de Dame Emmanuelle</h2>
+            <p class="section-desc">
+              Retrouvez ici les plateformes officielles de Dame Emmanuelle.  
+              Ces liens mènent directement à ses profils authentiques.
+            </p>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.8rem; max-width:480px;">
+            <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://jalf.com/ct/memberProfile/4736514/">
+              🔗 Jalf — Profil officiel
+            </a>
+
+            <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/dame.emanuelle.2025?">
+              🔗 Facebook — Dame Emmanuelle
+            </a>
+
+            <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://fetlife.com/Dame_Emanuelle7">
+              🔗 FetLife — @Dame_Emanuelle7
+            </a>
+
+            <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@dame.emanuelle?_r=1&_t=ZS-91l8dduX7E">
+              🔗 TikTok — @dame.emanuelle
+            </a>
+
+            <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://bsky.app/profile/dameemanuelle.bsky.social">
+              🔗 Bluesky — dameemanuelle.bsky.social
+            </a>
+
+            <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/dame_emanuelle?igsh=MXBxamY2OXd4ZTI0Zg%3D%3D&utm_source=qr">
+              🔗 Instagram — @dame_emanuelle
+            </a>
+
+            <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://dameemanuelle-code.github.io/Chambre-rose-flamboyant/">
+              🔗 Site — Chambre rose flamboyant
+            </a>
+
+            <a class="btn-ghost" style="justify-content:center;" target="_blank" rel="noopener noreferrer" href="https://ladyzaphir-dev.github.io/Site-turquoise/">
+              🔗 Site — Lady Zaphir (turquoise)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Offre</div>
+            <h2 class="section-title">Services proposés</h2>
+            <p class="section-desc">
+              Les séances sont toujours préparées à partir d’un formulaire et d’un échange. Voici les principaux formats offerts au donjon Cuir et Fantaisies.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <article class="card">
+              <h3 class="card-title">Scénarios BDSM immersifs</h3>
+              <p class="card-text">
+                Séances construites autour d’un scénario : élève / maîtresse, service, protocole, domination, postures, règles à respecter. L’intensité est adaptée à l’expérience et aux limites de la personne reçue.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag">Jeux de rôle</span>
+                <span class="card-tag">Immersion</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Séances de discipline et de protocole</h3>
+              <p class="card-text">
+                Travail ciblé sur la façon de se tenir, de répondre, d’obéir à des consignes précises, de suivre un protocole. Idéal pour celles et ceux qui souhaitent explorer la dimension la plus structurée du BDSM.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag">Protocole</span>
+                <span class="card-tag">Correction</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Expériences avec observateurs</h3>
+              <p class="card-text">
+                Possibilité, dans certains cas, d’être observé·e durant la séance par une ou plusieurs personnes présentes sur place, avec ou sans prise de photos, toujours discutée et approuvée à l’avance, dans un cadre discret et anonyme.
+              </p>
+              <div class="card-tags">
+                <span class="card-tag">Observation</span>
+                <span class="card-tag">Optionnel</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TARIFS & RÈGLES -->
+      <section id="tarifs">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Infos pratiques</div>
+            <h2 class="section-title">Tarifs, dépôt et cadre de fonctionnement</h2>
+            <p class="section-desc">
+              Pour garantir le respect du temps, la préparation des séances et la sécurité de chacune, Cuir et Fantaisies fonctionne avec des tarifs clairs, un dépôt obligatoire et des règles non négociables.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div>
+              <div class="about-card">
+                <h3 style="font-size:1.05rem; margin-bottom:0.6rem;">Tarification</h3>
+                <ul class="about-list">
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Tarif horaire :</strong> 300 $ de l’heure.</span>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Durée minimale :</strong> en général 1 heure (possibilités de séances plus longues selon entente préalable).</span>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Dépôt obligatoire :</strong> un dépôt de 50 $ est exigé pour confirmer toute réservation.</span>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Solde :</strong> payable au début de la séance, selon les modalités précisées lors de l’échange (paiement en argent ou autre modalité convenue).</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="about-card">
+                <h3 style="font-size:1.05rem; margin-bottom:0.6rem;">Règles et cadre</h3>
+                <ul class="about-list">
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Formulaire obligatoire :</strong> avant toute première séance, un formulaire doit être rempli (limites, santé, attentes, rôle souhaité, expérience).</span>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Consentement et limites :</strong> rien n’est imposé. Les pratiques, l’intensité et le style sont discutés et validés à l’avance.</span>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Anonymat :</strong> aucun nom complet n’est exigé pour la partie jeu. L’identité réelle reste confidentielle. Les informations de contact servent uniquement à la réservation.</span>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Photos / vidéos :</strong> uniquement sur accord explicite de toutes les personnes impliquées. Aucune diffusion publique. La présence d’observateurs, avec ou sans prise d’images, est toujours discutée avant la séance.</span>
+                  </li>
+                  <li>
+                    <span class="dot"></span>
+                    <span><strong>Respect mutuel :</strong> aucune attitude insultante ou irrespectueuse hors cadre de jeu, aucun comportement non consensuel, aucun usage de substances imposé.</span>
+                  </li>
+                </ul>
+                <div class="about-badges">
+                  <span class="about-badge">300 $ / heure</span>
+                  <span class="about-badge">Dépôt 50 $</span>
+                  <span class="about-badge">Formulaire préalable</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXEMPLES D’EXPÉRIENCES -->
+      <section id="portfolio">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Exemples</div>
+            <h2 class="section-title">Formats de séances possibles</h2>
+            <p class="section-desc">
+              Chaque séance est unique, mais voici quelques exemples de structures fréquentes, adaptables selon votre expérience et vos limites.
+            </p>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="portfolio-item">
+              <h3 class="portfolio-title">Séance « Découverte encadrée »</h3>
+              <div class="portfolio-meta">1 heure – Niveau débutant / curieux·se</div>
+              <p>
+                Présentation du cadre, rappel des règles, mise en place d’un scénario simple avec postures, réponses, consignes et dynamique de pouvoir légère. Idéal pour une première immersion dans un donjon.
+              </p>
+              <a href="#contact" class="portfolio-link">Demander ce type de séance</a>
+            </article>
+
+            <article class="portfolio-item">
+              <h3 class="portfolio-title">Séance « Discipline et protocole »</h3>
+              <div class="portfolio-meta">1–2 heures – Niveau intermédiaire</div>
+              <p>
+                Accent mis sur la tenue, la façon de s’adresser aux Dominantes, le respect de règles précises, les postures imposées et les corrections en cas d’écarts au protocole défini.
+              </p>
+              <a href="#contact" class="portfolio-link">Construire un protocole avec l’équipe</a>
+            </article>
+
+            <article class="portfolio-item">
+              <h3 class="portfolio-title">Séance « Immersion avec observateurs »</h3>
+              <div class="portfolio-meta">Durée variable – Sur entente</div>
+              <p>
+                Séance où vous êtes au centre de la dynamique, avec présence possible d’observateurs. Peut inclure des phases de service, de mise en scène, d’évaluation ou de regard extérieur, selon ce qui a été convenu.
+              </p>
+              <a href="#contact" class="portfolio-link">Discuter des options d’observation</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TÉMOIGNAGES -->
+      <section id="temoignages">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Confiance</div>
+            <h2 class="section-title">Quelques retours anonymisés</h2>
+            <p class="section-desc">
+              Les témoignages sont toujours partagés avec l’accord des personnes concernées et peuvent être anonymisés pour préserver leur confidentialité.
+            </p>
+          </div>
+
+          <div class="testimonials-grid">
+            <article class="testimonial">
+              <p class="testimonial-quote">
+                « Je me suis senti·e encadré·e du début à la fin. Tout a été expliqué à l’avance, rien n’a été imposé par surprise, et je suis reparti·e avec l’impression d’avoir vécu une expérience vraiment pensée pour moi. »
+              </p>
+              <div>
+                <div class="testimonial-author">Participant·e anonyme</div>
+                <div class="testimonial-role">Séance découverte</div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <p class="testimonial-quote">
+                « L’équipe sait doser l’intensité et la structure. On sent qu’il y a une vraie réflexion derrière chaque scénario et que la sécurité reste une priorité, malgré l’ambiance de domination. »
+              </p>
+              <div>
+                <div class="testimonial-author">Participant·e anonyme</div>
+                <div class="testimonial-role">Immersion scénarisée</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Contact</div>
+            <h2 class="section-title">Faire une demande de séance au donjon</h2>
+            <p class="section-desc">
+              Ce formulaire est une première étape. Il ne s’agit pas d’une confirmation automatique, mais d’une demande que l’équipe étudiera avant de vous répondre.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <form class="contact-form" method="post" action="mailto:cuiretfantaisies@gmail.com,Domsteel13@gmail.com" enctype="text/plain">
+                <div class="field">
+                  <label for="name">Nom ou pseudonyme</label>
+                  <input id="name" name="name" type="text" placeholder="Votre nom ou pseudonyme" required>
+                </div>
+                <div class="field">
+                  <label for="email">Adresse courriel</label>
+                  <input id="email" name="email" type="email" placeholder="vous@example.com" required>
+                </div>
+                <div class="field">
+                  <label for="subject">Type de demande</label>
+                  <input id="subject" name="subject" type="text" placeholder="Ex. : séance découverte, immersion, discipline, observateurs…">
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Parlez brièvement de votre expérience, de vos limites, de ce que vous recherchez et de vos disponibilités approximatives." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="border:none; justify-content:center; margin-top:0.3rem;">
+                  Envoyer la demande ✉
+                </button>
+              </form>
+            </div>
+
+            <div class="contact-side">
+              <p class="contact-line">
+                <strong>Courriel principal :</strong><br>
+                <a href="mailto:cuiretfantaisies@gmail.com">cuiretfantaisies@gmail.com</a>
+              </p>
+              <p class="contact-line">
+                <strong>Autre courriel de contact :</strong><br>
+                <a href="mailto:Domsteel13@gmail.com">Domsteel13@gmail.com</a>
+              </p>
+              <p class="contact-line">
+                <strong>Téléphone :</strong><br>
+                <a href="tel:15143179079">514-317-9079</a>
+              </p>
+              <p class="contact-line">
+                <strong>Région :</strong><br>
+                Laurentides, Québec – l’adresse du donjon est communiquée uniquement après validation de la demande et réception du dépôt.
+              </p>
+              <p class="contact-line">
+                <strong>Dépôt et annulation :</strong><br>
+                Un dépôt de 50 $ est exigé pour bloquer la plage horaire. Les modalités d’annulation, de report et de non-présentation sont précisées lors de la réponse à votre demande.
+              </p>
+              <div class="contact-pill">
+                <span>📅</span>
+                <span>Donjon accessible uniquement sur rendez-vous, après échange écrit et validation mutuelle.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-row">
+        <div>© <span id="year"></span> Cuir et Fantaisies – Tous droits réservés.</div>
+        <div class="footer-links">
+          <a href="#donjon">Le donjon</a>
+          <a href="#a-propos">L’équipe</a>
+          <a href="#liens-emmanuelle">Liens Dame Emmanuelle</a>
+          <a href="#services">Services</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="protocole.html">Règles du protocole</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // année automatique
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // menu burger
+    const burger = document.getElementById("nav-burger");
+    const mobileNav = document.getElementById("nav-mobile");
+
+    burger.addEventListener("click", () => {
+      const isOpen = mobileNav.style.display === "flex";
+      mobileNav.style.display = isOpen ? "none" : "flex";
+      const spans = burger.querySelectorAll("span");
+      if (!isOpen) {
+        spans[0].style.transform = "translateY(9px) rotate(45deg)";
+        spans[1].style.opacity = "0";
+        spans[2].style.transform = "translateY(-9px) rotate(-45deg)";
+      } else {
+        spans[0].style.transform = "";
+        spans[1].style.opacity = "1";
+        spans[2].style.transform = "";
+      }
+    });
+
+    // scroll doux vers les sections internes
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        const targetId = this.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
